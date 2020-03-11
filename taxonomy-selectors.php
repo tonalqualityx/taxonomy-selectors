@@ -32,6 +32,12 @@ function ind_tax_selector($atts){
             'hide_empty' => false,
         ), $atts, $tag );
 
+        if($atts['hide_empty'] == "true"){
+            $atts['hide_empty'] = true;
+        } else {
+            $atts['hide_empty'] = false;
+        }
+
     if(taxonomy_exists( $atts['tax'] )){
         $response = "<select name='{$atts['name']}' id='{$atts['id']}' class='{$atts['classes']}'>";   
     
